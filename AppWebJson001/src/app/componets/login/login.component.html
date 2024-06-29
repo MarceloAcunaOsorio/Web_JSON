@@ -1,1 +1,38 @@
-<p>login works!</p>
+<main class="bodyform">
+    <div class="container-form">
+        <div class="information">
+            <div class="info-childs">
+                <h2>Bienvenido</h2>
+                <p>si aun no tienes una cuenta por favor registrese aqui</p>
+                <form action="/registrar">
+                    <input type="submit" value="Registrarse" id="sign-in">
+                </form>
+            </div>
+        </div>
+        <div class="form-information">
+            <div class="form-formation-childs">
+                <h2>Iniciar Sesión</h2>
+                <div class="icons">
+                    <i class="bi bi-joystick"></i>
+                    <i class="bi bi-dpad"></i>
+                    <i class="bi bi-rocket"></i>
+                </div>
+                <p>o iniciar sesión con una cuenta</p>
+                <form class="form" [formGroup]="miFormularioLogin" (ngSubmit)="submitForm()">
+                    <label>
+                        <i class="bi bi-person-circle"></i>
+                        <input type="text" placeholder="Nombre de Usuario" formControlName="usuario">
+                        <div class="error" *ngIf="miFormularioLogin.get('usuario')?.touched && miFormularioLogin.get('usuario')?.hasError('required')"><span>Obligatoria</span></div>
+                    </label>
+                    <label>
+                        <i class="bi bi-file-lock-fill"></i>
+                        <input type="password" placeholder="Contraseña" formControlName="password">
+                        <div class="error" *ngIf="miFormularioLogin.get('password')?.touched && miFormularioLogin.get('password')?.hasError('required')"><span>Obligatoria</span></div>
+                    </label>
+                    <button class="button" [disabled]="miFormularioLogin.invalid">Iniciar Sesion</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+

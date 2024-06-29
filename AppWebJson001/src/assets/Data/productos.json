@@ -1,5 +1,9 @@
 [
     {
-        
+        "id":1,
+        "nombre":"Pulgas Locas",
+        "descripcion":"¡Atrapa las pulgas saltarinas! El juego de mesa Pulgas Locas es el clásico y divertido juego de atrapar bichos.",
+        "precio":11990,
+        "imagen":"assets/img/familiarpulgaslocas.jpg"
     }
 ]

@@ -1,1 +1,89 @@
-<p>registrar works!</p>
+
+<main class="bodyform">
+
+    <div class="container-form">
+        <div class="information">
+            <div class="info-childs">
+                <h2>Bienvenido</h2>
+                <p>Para unirte a nuestra comunidad por favor Inicia Sesión con tus datos</p>
+                <form action="/login">
+                    <input type="submit" value="Iniciar Sesión" id="sign-in">
+                </form>
+            </div>
+        </div>
+        <div class="form-information">
+            <div class="form-formation-childs">
+                <h2>Crear una Cuenta</h2>
+                <div class="icons">
+                    <i class="bi bi-joystick"></i>
+                    <i class="bi bi-dpad"></i>
+                    <i class="bi bi-rocket"></i>
+                </div>
+                <p>o usa tu email para registrarte</p>
+
+                <form id="formulario" [formGroup]="miFormulario" (ngSubmit)="submitForm()">
+                    <div class="form">
+                        <label>
+                            <i class="bi bi-person-fill"></i>
+                            <input type="text"  id="name" placeholder="Nombre Completo" formControlName="nombre">
+                            <!--mensaje de error-->
+                            <div class="error" *ngIf="miFormulario.get('nombre')?.touched && miFormulario.get('nombre')?.hasError('required')"><span>Obligatoria</span></div>
+                            <div class="error" *ngIf="miFormulario.get('nombre')?.touched && miFormulario.get('nombre')?.hasError('minlength')">Largo mayor {{ miFormulario.get('nombre')?.errors?.['minlength']?.requiredLength}} caracteres</div>
+                            <div class="error" *ngIf="miFormulario.get('nombre')?.touched && miFormulario.get('nombre')?.hasError('maxlength')">Largo menor {{ miFormulario.get('nombre')?.errors?.['maxlength']?.requiredLength}} caracteres </div>
+                        </label>
+
+                        <label>
+                            <i class="bi bi-person-circle"></i>
+                            <input type="text" id="user" placeholder="Nombre de Usuario" formControlName="usuario">
+                            <!--mensaje de error-->
+                            <div class="error" *ngIf="miFormulario.get('usuario')?.touched && miFormulario.get('usuario')?.hasError('required')">Obligatoria</div>
+                            <div class="error" *ngIf="miFormulario.get('usuario')?.touched && miFormulario.get('usuario')?.hasError('minlength')">Largo mayor {{ miFormulario.get('usuario')?.errors?.['minlength']?.requiredLength}} caracteres</div>
+                            <div class="error" *ngIf="miFormulario.get('usuario')?.touched && miFormulario.get('usuario')?.hasError('maxlength')">Largo menor {{ miFormulario.get('usuario')?.errors?.['maxlength']?.requiredLength}} caracteres </div>
+                        </label>
+
+                        <label>
+                            <i class="bi bi-envelope-fill"></i>
+                            <input type="email" id="email" placeholder="Correo Electronico" formControlName="correo">
+                            <!--mensaje de error-->
+                            <div class="error" *ngIf="miFormulario.get('correo')?.touched && miFormulario.get('correo')?.hasError('required')"><span>Obligatorio</span></div>
+                            <div class="error" *ngIf="miFormulario.get('correo')?.touched && miFormulario.get('correo')?.hasError('email')"><span>Email debe ser valido</span></div>
+                        </label>
+                       
+                        <label>
+                            <i class="bi bi-file-lock-fill"></i>
+                            <input type="password" id="password1" placeholder="Contraseña" formControlName="password1">
+                            <!--mensaje de error-->
+                            <div class="error" *ngIf="miFormulario.get('password1')?.touched && miFormulario.get('password1')?.hasError('required')">Obligatoria</div>
+                            <div class="error" *ngIf="miFormulario.get('password1')?.touched && miFormulario.get('password1')?.hasError('minlength')">Largo mayor {{ miFormulario.get('password1')?.errors?.['minlength']?.requiredLength}} caracteres</div>
+                            <div class="error" *ngIf="miFormulario.get('password1')?.touched && miFormulario.get('password1')?.hasError('maxlength')">Largo menor {{ miFormulario.get('password1')?.errors?.['maxlength']?.requiredLength}} caracteres </div>
+                            <div class="error" *ngIf="miFormulario.get('password1')?.touched && miFormulario.get('password1')?.hasError('customPasswordValidator')">Clave no cumple</div>
+                        </label>
+
+                        <label>
+                            <i class="bi bi-file-lock-fill"></i>
+                            <input matInput type="password" id="password2" placeholder="Repetir Contraseña"formControlName="password2" >
+                            <!--mensaje de error-->
+                            <div class="error" *ngIf="miFormulario.get('password2')?.touched && miFormulario.get('password2')?.hasError('required')">Ingrese una Clave</div>
+                            <div class="error" *ngIf="miFormulario.get('password2')?.touched && miFormulario.get('password2')?.hasError('minlength')">Largo mayor {{ miFormulario.get('password2')?.errors?.['minlength']?.requiredLength}} caracteres</div>
+                            <div class="error" *ngIf="miFormulario.get('password2')?.touched && miFormulario.get('password2')?.hasError('maxlength')">Largo menor {{ miFormulario.get('password2')?.errors?.['maxlength']?.requiredLength}} caracteres </div>
+                            <div class="error" *ngIf="miFormulario.get('password2')?.touched && miFormulario.get('password2')?.hasError('crossConfirmPasswordError')">la contraseña no coincide</div>
+                        </label>
+                        <label>
+                            <i class="bi bi-cake"></i>
+                            <input type="date" id="birthday" placeholder="Fecha Nacimiento" formControlName="fecha_nac">
+                            <div class="error" *ngIf="miFormulario.get('fecha_nac')?.touched && miFormulario.get('fecha_nac')?.hasError('required') ">fecha invalida</div>
+                        </label>
+                        <label>
+                            <i class="bi bi-truck"></i>
+                            <input type="text" id="address" placeholder="Direccion" formControlName="Direccion">
+                        </label>
+                        <button class="button" [disabled]="miFormulario.invalid">Registrar</button>
+                    </div>
+                </form>
+
+            </div>
+           
+        </div>
+    </div>
+   <!--{{miFormulario.value | json}}--> 
+</main>

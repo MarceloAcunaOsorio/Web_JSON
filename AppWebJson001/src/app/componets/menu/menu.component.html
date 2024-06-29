@@ -1,1 +1,38 @@
-<p>menu works!</p>
+<header class="header">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container-fluid">
+
+            <!--icono-->
+            <a class="navbar-brand" href="/home">
+                <i class="bi bi-joystick"></i>
+                <span class="text-warning">Tragones y Mazmorras</span>
+            </a>
+
+
+            <!--Boton del menu-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <!--Elementos del menu Colapsable-->
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link active" href="/home">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/rompecabeza">Rompecabeza</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/estrategia">Estrategia</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/aventura">Aventura</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/familiar">Familiar</a></li>
+                </ul>
+                <hr class="text-white-50">
+
+                <!--Boton ingresar o registrarse-->
+                <ul class="navbar-nav flex-row flew-wrap text-light">
+                    <li class="nav-item col-6 col-md-auto p-3"><a href="/login">ingresar</a></li>
+                    <li class="nav-item col-6 col-md-auto p-3"><a href="/registrar">Registrarse</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
