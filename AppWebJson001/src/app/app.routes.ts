@@ -5,7 +5,7 @@ import { RompecabezaComponent } from './componets/rompecabeza/rompecabeza.compon
 import { EstrategiaComponent } from './componets/estrategia/estrategia.component';
 import { AventuraComponent } from './componets/aventura/aventura.component';
 import { FamiliarComponent } from './componets/familiar/familiar.component';
-import { Component } from '@angular/core';
+import { HomeComponent } from './componets/home/home.component';
 
 export const routes: Routes = [
     
@@ -15,5 +15,6 @@ export const routes: Routes = [
     {path: 'estrategia', component:EstrategiaComponent},
     {path: 'aventura',component: AventuraComponent},
     {path: 'familiar',component: FamiliarComponent},
-    {path: 'home', component: Component}
+    {path: 'home',component: HomeComponent},
+    {path: '**',redirectTo: 'home'}
 ];
