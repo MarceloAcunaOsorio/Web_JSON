@@ -21,7 +21,7 @@
                 </div>
                 <p>o usa tu email para registrarte</p>
 
-                <form id="formulario" [formGroup]="miFormulario" (ngSubmit)="submitForm()">
+                <form id="formulario" [formGroup]="miFormulario" >
                     <div class="form">
                         <label>
                             <i class="bi bi-person-fill"></i>
@@ -77,7 +77,7 @@
                             <i class="bi bi-truck"></i>
                             <input type="text" id="address" placeholder="Direccion" formControlName="Direccion">
                         </label>
-                        <button class="button" [disabled]="miFormulario.invalid">Registrar</button>
+                        <button class="button" [disabled]="miFormulario.invalid" (click)="clicSend()">Registrar</button>
                     </div>
                 </form>
 

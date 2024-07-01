@@ -14,16 +14,29 @@ import { FormsModule } from '@angular/forms';
   providers: [JsonService]
 })
 export class AventuraComponent  implements OnInit{
-   productos: any[]=[];
-   nombre: string = '';
-   descripcion:string = '';
-   precio: number | null = null;
-
+   
+ /**
+  * variable para gusradar los datos del Json
+  */
+  productos: any;
+ 
+/**
+ * 
+ * @param jsonService 
+ * importacion del servicio en el constructor para poder usar sus elementos
+ */
    constructor(private jsonService: JsonService){}
 
+   /**
+    * implementacionde del hgOninit
+    */
    ngOnInit(): void {
        this.jsonService.getJsonData().subscribe(data =>{
         this.productos = data;
        });
    }
+
 }
+
+
+

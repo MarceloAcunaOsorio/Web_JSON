@@ -1,3 +1,9 @@
+
+
+
+
+
+// componentes
 import { Routes } from '@angular/router';
 import { LoginComponent } from './componets/login/login.component';
 import { RegistrarComponent } from './componets/registrar/registrar.component';

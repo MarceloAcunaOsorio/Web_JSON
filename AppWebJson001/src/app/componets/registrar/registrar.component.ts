@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { PasswordStateMatcher, crossPasswordMatchingValidatior, customPasswordValidator } from './register-custom-Validators';
+import { LocalStorageService } from 'src/app/storage/local-storage.service';
 
 @Component({
   selector: 'app-registrar',
@@ -13,7 +14,7 @@ import { PasswordStateMatcher, crossPasswordMatchingValidatior, customPasswordVa
 export class RegistrarComponent {
   passwordStateMatcher = new PasswordStateMatcher();
   miFormulario!: FormGroup;
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private _LocalStorageService: LocalStorageService) { }
 
 
   ngOnInit(): void {
@@ -29,7 +30,7 @@ export class RegistrarComponent {
     {validators: crossPasswordMatchingValidatior})
   }
 
-
+/*
 
   submitForm() {
     if (this.miFormulario.valid) {
@@ -40,4 +41,27 @@ export class RegistrarComponent {
       console.log("Direccion: " + this.miFormulario.get('Direccion')!.value);
     }
   }
+*/
+
+
+
+formDataInStorage?: IForm;
+
+clicSend(): void{
+  this._LocalStorageService.setItem('form',this.miFormulario.value);
+  const formStorage = this._LocalStorageService.getItem<IForm>('form');
+
+}
+
+}
+
+
+interface IForm{
+  nombre:'' ,
+  usuario:'',
+  correo:'',
+  password1:'',
+  password2:'',
+  fecha_nac:'1900-01-10',
+  Direccion: ''
 }

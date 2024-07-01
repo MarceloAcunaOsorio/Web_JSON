@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { MenuComponent } from './componets/menu/menu.component';
 import { FooterComponent } from './componets/footer/footer.component';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -15,4 +16,7 @@ import { FooterComponent } from './componets/footer/footer.component';
 })
 export class AppComponent {
   title = 'AppWebJson001';
+
+
+
 }

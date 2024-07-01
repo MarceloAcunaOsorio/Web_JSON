@@ -4,6 +4,31 @@
         "nombre":"Pulgas Locas",
         "descripcion":"¡Atrapa las pulgas saltarinas! El juego de mesa Pulgas Locas es el clásico y divertido juego de atrapar bichos.",
         "precio":11990,
-        "imagen":"assets/img/familiarpulgaslocas.jpg"
+        "imagenUrl":["../../../assets/img/familiarpulgaslocas.jpg"],
+        "categoria":[1,"aventura"]
+    },
+    {
+        "id":2,
+        "nombre":"Pulgas Locas",
+        "descripcion":"¡Atrapa las pulgas saltarinas! El juego de mesa Pulgas Locas es el clásico y divertido juego de atrapar bichos.",
+        "precio":11990,
+        "imagenUrl":["../../../assets/img/familiarpulgaslocas.jpg"],
+        "categoria":[1,"aventura"]
+    },
+    {
+        "id":3,
+        "nombre":"Pulgas Locas",
+        "descripcion":"¡Atrapa las pulgas saltarinas! El juego de mesa Pulgas Locas es el clásico y divertido juego de atrapar bichos.",
+        "precio":11990,
+        "imagenUrl":["../../../assets/img/familiarpulgaslocas.jpg"],
+        "categoria":[1,"aventura"]
+    },
+    {
+        "id":4,
+        "nombre":"Pulgas Locas",
+        "descripcion":"¡Atrapa las pulgas saltarinas! El juego de mesa Pulgas Locas es el clásico y divertido juego de atrapar bichos.",
+        "precio":11990,
+        "imagenUrl":["../../../assets/img/familiarpulgaslocas.jpg"],
+        "categoria":[1,"aventura"]
     }
 ]

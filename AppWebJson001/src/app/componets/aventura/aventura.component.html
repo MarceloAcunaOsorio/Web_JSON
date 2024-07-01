@@ -1,15 +1,19 @@
-<main class="conatiner-rompecabeza">
-    <article id="products_div" *ngFor="let producto of productos">
-        <h2>Aventura</h2>
-        <div class="product-gallery">
-            <div class="product-item">
-                <img src="assets/img/aventurapathfinder.jpg" alt="Producto 1">
-                <h3>{{producto.nombre}}</h3>
-                <p>{{producto.descripcion}}</p>
-                <h3>${{producto.precio}}</h3>
-                <button>Comprar</button>
+<div *ngIf="productos && productos.length >0 ; else noData">
+    <main class="conatiner-rompecabeza" >
+        <article id="products_div" >
+            <h2>Aventura</h2>
+            <div class="product-gallery">
+                <div class="product-item" *ngFor="let producto of productos">
+                    <img src="{{producto.imagenUrl}}" alt="Producto 1">
+                    <h3>{{producto.nombre}}</h3>
+                    <p>{{producto.descripcion}}</p>
+                    <h3>${{producto.precio}}</h3>
+                    <button>Comprar</button>
+                </div>
             </div>
-        </div>
-    </article>
-   </main>
-
+        </article>
+    </main>
+</div>
+<ng-template #noData>
+   <p>No Hay Datos Disponibles</p>
+</ng-template>

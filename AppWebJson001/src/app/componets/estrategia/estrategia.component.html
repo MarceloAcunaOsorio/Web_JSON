@@ -1,36 +1,19 @@
-<main class="conatiner-rompecabeza">
-    <article id="products_div">
-        <h2>Estrategia</h2>
-        <div class="product-gallery">
-            <div class="product-item">
-                <img src="assets/img/estrategiamonopoly.jpg" alt="Producto 1">
-                <h3>Monopoly</h3>
-                <p>el emocionante juego de negociar propiedades.</p>
-                <h3>$5.990</h3>
-                <button>Comprar</button>
+<div *ngIf="productos && productos.length >0 ; else noData">
+    <main class="conatiner-rompecabeza" >
+        <article id="products_div" >
+            <h2>Estrategia</h2>
+            <div class="product-gallery">
+                <div class="product-item" *ngFor="let producto of productos">
+                    <img src="{{producto.imagenUrl}}" alt="Producto 1">
+                    <h3>{{producto.nombre}}</h3>
+                    <p>{{producto.descripcion}}</p>
+                    <h3>${{producto.precio}}</h3>
+                    <button>Comprar</button>
+                </div>
             </div>
-            <div class="product-item">
-                <img src="assets/img/estrategiauno.jpg" alt="Producto 2">
-                <h3>Uno</h3>
-                <p>El Uno consiste en competir con otros jugadores con el objetivo de ser el primero en quedarse sin cartas.</p>
-                <h3>$5.990</h3>
-                <button>Comprar</button>
-            </div>
-            <div class="product-item">
-                <img src="assets/img/estrategiaclue.jpg" alt="Producto 3">
-                <h3>Clue</h3>
-                <p>¡El clásico juego de deducción y misterio! Resuelve el misterioso asesinato en la mansión haciendo preguntas y revelando pistas.</p>
-                <h3>$8.990</h3>
-                <button>Comprar</button>
-            </div>
-            <div class="product-item">
-                <img src="assets/img/estrategiaJenga.jpg" alt="Producto 4">
-                <h3>Jenga</h3>
-                <p>El Jenga es un juego de habilidad física</p>
-                <h3>$10.990</h3>
-                <button>Comprar</button>
-            </div>
-            <!-- Añade más productos según sea necesario -->
-        </div>
-    </article>
-   </main>
+        </article>
+    </main>
+</div>
+<ng-template #noData>
+   <p>No Hay Datos Disponibles</p>
+</ng-template>
